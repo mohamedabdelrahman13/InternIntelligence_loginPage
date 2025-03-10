@@ -1,0 +1,72 @@
+section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    border-radius: 20px;
+}
+form{
+    width: fit-content;
+    margin: 0 auto 0 auto;
+}
+
+.login-img img{
+    border-radius: 20px;
+}
+form input.username-input , form input.password-input{
+    padding: 3px 0;
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid lightgray;
+}
+
+form .password{
+    position: relative;
+}
+form .eye-icon{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0 , -80%); 
+
+}
+form input:focus{
+    outline: none;
+}
+
+form .submitbtns{
+    margin-top: 20px;
+    
+}
+
+form a{
+    color: var(--mainColor);
+    font-size: 14px;
+}
+form span{
+    font-size: 14px;
+}
+
+form .validation-error{
+    overflow: hidden;
+    height: 30px;
+}
+form .validation-error small{
+    font-size: 13px;
+}
+
+/* border-validation styling */
+.border-valid{
+    border-bottom:3px solid green !important;
+}
+.border-invalid{
+    border-bottom:3px solid red !important;
+}
+
+/* snackbar styling  */
+::ng-deep .snackbar-success{
+    --mdc-snackbar-supporting-text-color: lightgreen
+}
+::ng-deep .snackbar-failed{
+    --mdc-snackbar-supporting-text-color: red
+}

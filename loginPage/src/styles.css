@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --mainColor: rgb(0, 115, 255);
+  }
+
+.mainBtn{
+    background-color: var(--mainColor);
+    color: white;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+  }
+.mainBtn::after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    z-index: -1;
+    color: var(--mainColor);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    transition: all .2s ease-in-out;
+
+  }
+
+.mainBtn:hover::after{
+    width: 100%;
+  }
+
+.mainBtn:hover {
+    color: var(--mainColor);
+  }
+  
+html, body { height: 100%;  }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+background: linear-gradient(to top right , var(--mainColor) , rgb(42, 42, 135));
+
+}

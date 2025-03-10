@@ -1,0 +1,70 @@
+<section class="container w-75 bg-light">
+    <div class="login-content shadow-lg row">
+        <div class="col-12 col-md-6 p-0">
+           <div class="login-img" #img>
+              <img src="/images/top-view-phone-desk-log-screen.jpg"  width="100%" height="450px" alt="...">
+           </div>
+        </div>
+
+        <!-- form  -->
+        <div class="col-12 col-md-6 pt-5 ps-3 pe-3" #login>
+            <form [formGroup]="loginForm">
+                <div class="title" #title>
+                    <h2>Log in into your Account</h2>
+                    <span>Enter your details below</span>
+                </div>
+                <div class="username mt-3">
+                    <!-- {{user.className | json}} -->
+                    <input class="username-input" [class.border-invalid]="loginForm.get('userName')?.errors?.['required'] && loginForm.get('userName')?.touched"
+                    [class.border-valid]="!loginForm.get('userName')?.errors?.['required'] && loginForm.get('userName')?.touched"
+                    formControlName="userName" 
+                    type="text" 
+                    placeholder="username" 
+                    id="username">
+                    <div class="validation-error">
+                        <small class="text-danger" *ngIf="loginForm.get('userName')?.errors?.['required'] && loginForm.get('userName')?.touched">this field is required <i class="fa-solid fa-circle-exclamation"></i></small>
+                        <small class="text-success" *ngIf="!loginForm.get('userName')?.errors?.['required'] && loginForm.get('userName')?.touched">Success<i class="ms-1 fa-solid fa-circle-check"></i></small>
+                    </div>
+                </div>
+              <div class="password">
+                <input  class="password-input"
+                [class.border-invalid]="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched"
+                    [class.border-valid]="!loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched"
+                    formControlName="userName" 
+                    type="text" 
+                    placeholder="username" 
+                    id="username"
+                     formControlName="password"
+                      type="password"
+                      placeholder="password" 
+                      id="password">
+                <span class="eye-icon">
+                    <mat-icon appPasswordToggle>visibility</mat-icon>
+                </span>
+                <div class="validation-error">
+                    <small class="not-valid text-danger" *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">this field is required <i class="fa-solid fa-circle-exclamation"></i></small>
+                    <small class="success text-success" *ngIf="!loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">Success <i class="ms-1 fa-solid fa-circle-check"></i></small>
+                </div>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                 Remember me
+                </label>
+            </div>
+            
+
+        <div class="submitbtns">
+            <div class="submit mb-2">
+                <button [disabled]="loginForm.invalid"  (click)="onSubmit()"  class="mainBtn w-100">Login <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+            </div>  
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="me-5">Don't have an Account?<a>Sign Up</a></span>
+                <a class="ms-auto">forget password?</a>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</section>
