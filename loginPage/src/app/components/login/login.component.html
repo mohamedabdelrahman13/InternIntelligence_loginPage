@@ -38,9 +38,9 @@
                       type="password"
                       placeholder="password" 
                       id="password">
-                <!-- <span class="eye-icon">
+                <span class="eye-icon">
                     <mat-icon appPasswordToggle>visibility</mat-icon>
-                </span> -->
+                </span>
                 <div class="validation-error">
                     <small class="not-valid text-danger" *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">this field is required <i class="fa-solid fa-circle-exclamation"></i></small>
                     <small class="success text-success" *ngIf="!loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">Success <i class="ms-1 fa-solid fa-circle-check"></i></small>
