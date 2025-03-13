@@ -5,18 +5,17 @@ import { AfterViewInit, Directive, ElementRef, HostListener, ViewChild, input } 
   standalone: false
 })
 export class PasswordToggleDirective{
-
   private isVisible:boolean = false;
   constructor(private element:ElementRef) {
     
   }
-
-
     @HostListener('click')
     togglePAssword(){
       // select the password input element
       const passwordInput = this.element.nativeElement.closest('.password').querySelector('input');
 
+
+      // change the input type based on the status of this.isVisible
       if(passwordInput.type && passwordInput){
         if(!this.isVisible){
           passwordInput.type = 'text';
